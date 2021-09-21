@@ -23,3 +23,13 @@ def dog(service: str = "dog.ceo"):
         r = requests.get("https://random.dog/woof.json")
         return Animal(r.json()["url"])
     raise ServiceError(f"Unexpected Service: '{service}'")
+
+def cat(service: str = "cataas"):
+    if service == "cataas":
+        return Animal("https://cataas.com/cat")
+    if service == "catapi":
+        r = requests.get("https://thatcopy.pw/catapi/rest/")
+        return Animal(r.json()["url"])
+    if service in ["no-api-key", "noapikey"]:
+        r = requests.get("https://no-api-key.com/api/v2/animals/cat")
+        return Animal(r.json()["image"], r.json()["fact"])
