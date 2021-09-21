@@ -24,6 +24,7 @@ def dog(service: str = "dog.ceo"):
         return Animal(r.json()["url"])
     raise ServiceError(f"Unexpected Service: '{service}'")
 
+
 def cat(service: str = "cataas"):
     if service == "cataas":
         return Animal("https://cataas.com/cat")
